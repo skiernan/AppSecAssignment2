@@ -10,13 +10,13 @@ app.config['SECRET_KEY'] = 'Itissecret'
 
 class RegistrationForm(FlaskForm):
 	username = StringField('Username', id='uname', validators=[InputRequired(), Length=(min=4, max=16)])
-	password = PasswordField('Password', id=pword, validators=[InputRequired(), Length=(min=8, max=80)]),validators.EqualTo('confirm', message='Passwords must match')])
-	twofa = StringField(‘Phone', id='2fa', validators=[DataRequired()])
+	password = PasswordField('Password', id='pword', validators=[InputRequired(), Length=(min=8, max=80)]),validators.EqualTo('confirm', message='Passwords must match')])
+	twofa = StringField(‘Phone', id='2fa', validators=[InputRequired()])
 	submit = SubmitField('Register')
 
 class LoginForm(FlaskForm):
 	username = StringField('Username', id='uname', validators=[InputRequired(), Length=(min=4, max=16)])
-	password = PasswordField('Password', id=pword, validators=[InputRequired(), Length=(min=8, max=80)]), validators.EqualTo('confirm', message='Passwords must match')])
+	password = PasswordField('Password', id='pword', validators=[InputRequired(), Length=(min=8, max=80)]), validators.EqualTo('confirm', message='Passwords must match')])
 	twofa = StringField(‘Phone', id='2fa', validators=[InputRequired()])
 	submit = SubmitField('Login')
 
