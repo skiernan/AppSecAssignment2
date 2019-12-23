@@ -7,6 +7,7 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Itissecret'
+session.cookie_httponly = 1
 
 class RegistrationForm(FlaskForm):
 	username = StringField('Username', id='uname', validators=[InputRequired(), Length=(min=4, max=16)])
